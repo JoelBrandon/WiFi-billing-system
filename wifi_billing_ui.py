@@ -165,8 +165,10 @@ def make_payment(phone_number, amount, reference):
 
 # Streamlit UI
 def main():
-    # Add a logo using a relative path
-    st.image("logo.png", width=100)  # Ensure the logo file is in the same folder as the script
+    # Add a file uploader for the logo
+    uploaded_logo = st.file_uploader("Upload a logo", type=["png", "jpg", "jpeg"])
+    if uploaded_logo is not None:
+        st.image(uploaded_logo, width=100)  # Display the uploaded logo
 
     # App title
     st.title("WiFi Hotspot Billing System")
