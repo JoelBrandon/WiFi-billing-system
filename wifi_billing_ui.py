@@ -165,8 +165,8 @@ def make_payment(phone_number, amount, reference):
 
 # Streamlit UI
 def main():
-    # Add a logo using the full file path
-    st.image("D:/Engraving/wifi setup/A1 MEDIA LOGO/logo.png", width=100)  # Replace with your logo file name
+    # Add a logo using a relative path
+    st.image("logo.png", width=100)  # Ensure the logo file is in the same folder as the script
 
     # App title
     st.title("WiFi Hotspot Billing System")
