@@ -7,6 +7,36 @@ import requests  # For API integration (if needed)
 # Define the Kampala time zone
 KAMPALA = pytz.timezone('Africa/Kampala')  # Kampala, Uganda (EAT, UTC+3)
 
+# Custom CSS for styling
+st.markdown(
+    """
+    <style>
+    .main {
+        background-color: #f0f2f6;
+    }
+    .sidebar .sidebar-content {
+        background-color: #ffffff;
+    }
+    h1 {
+        color: #2e86c1;
+    }
+    h2 {
+        color: #1a5276;
+    }
+    .stButton button {
+        background-color: #1a5276;
+        color: white;
+        border-radius: 5px;
+        padding: 10px 20px;
+    }
+    .stButton button:hover {
+        background-color: #2e86c1;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
 # Connect to the SQLite database
 def create_connection(db_file):
     conn = None
@@ -135,7 +165,14 @@ def make_payment(phone_number, amount, reference):
 
 # Streamlit UI
 def main():
+    # Add a logo using the full file path
+    st.image("D:/Engraving/wifi setup/A1 MEDIA LOGO/logo.png", width=100)  # Replace with your logo file name
+
+    # App title
     st.title("WiFi Hotspot Billing System")
+    st.markdown("---")
+
+    # Sidebar navigation
     st.sidebar.title("Navigation")
     choice = st.sidebar.radio("Choose an action", ["Add Customer", "Add WiFi Plan", "Subscribe Customer", "Log Usage", "Generate Invoice", "View Invoices", "Make Payment"])
 
